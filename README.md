@@ -77,9 +77,28 @@ layer {
 }
 ```` 
 - include dice_loss_layer
-- include focal_sigmoid_loss_layer
-- include focal_softmax_loss_layer
-see [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
+- include focal_sigmoid_loss_layer, the usage is simlar with **SigmoidCrossEntropyLoss** 
+```
+layer {
+  name: "loss_mask"
+  type: "FocalSigmoidLoss"
+  bottom: "mask_pred"
+  bottom: "mask_label"
+  top: "loss_mask"
+  loss_weight: 10
+  loss_param {
+       ignore_label: 255
+	   normalize: true
+  }
+  focal_sigmoid_loss_param
+  {
+	  alpha: 0.95
+      gamma: 2
+  }
+}
+```
+- include focal_softmax_loss_layer, modified from [https://github.com/chuanqi305/FocalLoss](https://github.com/chuanqi305/FocalLoss), the usage is similar with 
+**SoftmaxWithLoss**, more details, please see [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002)
 - include prelu_layer
 - include smooth_L1_loss_layer
 - include selu_layer
@@ -134,7 +153,7 @@ and [https://blog.csdn.net/xiamentingtao/article/details/78266153](https://blog.
 The code has been tested successfully on CentOS 6.9  with CUDA 8.0.
 
 ### Questions
-Please contact 'wangcaiyong2017@ia.ac.cn'
+Please contact wangcaiyong2017@ia.ac.cn
 
 ----
 Following is the original README of Caffe.
