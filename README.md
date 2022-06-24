@@ -147,7 +147,7 @@ layer {
 For installation, please follow the instructions of [Caffe](https://github.com/BVLC/caffe).
 For chinese users, please refers to [https://blog.csdn.net/xiamentingtao/article/details/78283336](https://blog.csdn.net/xiamentingtao/article/details/78283336),
  [https://blog.csdn.net/xiamentingtao/article/details/78266153](https://blog.csdn.net/xiamentingtao/article/details/78266153), [https://wangcaiyong.blog.csdn.net/article/details/110262549](https://wangcaiyong.blog.csdn.net/article/details/110262549), and 
-[https://wangcaiyong.blog.csdn.net/article/details/125335017](https://wangcaiyong.blog.csdn.net/article/details/125335017)【highly recommend！！！】.
+[https://wangcaiyong.blog.csdn.net/article/details/125335017](https://wangcaiyong.blog.csdn.net/article/details/125335017)【<----**HIGHLY RECOMMENDED**】.
 
  To enable cuDNN for GPU acceleration, cuDNN v6 is needed. 
 
